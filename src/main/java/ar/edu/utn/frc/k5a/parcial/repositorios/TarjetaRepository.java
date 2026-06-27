@@ -5,27 +5,23 @@ import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 public class TarjetaRepository {
 
     private EntityManager em;
 
-    public Tarjeta findById(long id) {
-        return em.find(Tarjeta.class, id);
+    public Optional<Tarjeta> buscarPorId(long id) {
+        return Optional.ofNullable(em.find(Tarjeta.class, id));
     }
 
-    public List<Tarjeta> findAll() {
-        return em.createQuery("SELECT t FROM Tarjeta t", Tarjeta.class)
-                 .getResultList();
-    }
-
-    public List<Tarjeta> findSinLiquidacion(int anio, int mes) {
+    public List<Tarjeta> buscarSinLiquidacion(int anio, int mes) {
         String jpql = "SELECT t FROM Tarjeta t WHERE t NOT IN " +
-                      "(SELECT l.tarjeta FROM Liquidacion l WHERE l.anio = :anio AND l.mes = :mes)";
+                "(SELECT l.tarjeta FROM Liquidacion l WHERE l.anio = :anio AND l.mes = :mes)";
         return em.createQuery(jpql, Tarjeta.class)
-                 .setParameter("anio", anio)
-                 .setParameter("mes", mes)
-                 .getResultList();
+                .setParameter("anio", anio)
+                .setParameter("mes", mes)
+                .getResultList();
     }
 }

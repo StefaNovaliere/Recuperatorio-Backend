@@ -11,13 +11,13 @@ public class ConsumoRepository {
 
     private EntityManager em;
 
-    public List<Consumo> findByTarjetaYPeriodo(long idTarjeta, int anio, int mes) {
-        String jpql = "SELECT c FROM Consumo c WHERE c.tarjeta.id = :idTarjeta " +
-                      "AND c.anio = :anio AND c.mes = :mes";
+    public List<Consumo> buscarPorTarjetaYPeriodo(String numeroTarjeta, int anio, int mes) {
+        String jpql = "SELECT c FROM Consumo c WHERE c.tarjeta.numero = :numero " +
+                "AND c.anio = :anio AND c.mes = :mes";
         return em.createQuery(jpql, Consumo.class)
-                 .setParameter("idTarjeta", idTarjeta)
-                 .setParameter("anio", anio)
-                 .setParameter("mes", mes)
-                 .getResultList();
+                .setParameter("numero", numeroTarjeta)
+                .setParameter("anio", anio)
+                .setParameter("mes", mes)
+                .getResultList();
     }
 }

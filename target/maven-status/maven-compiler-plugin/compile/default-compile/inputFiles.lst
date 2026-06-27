@@ -1,0 +1,13 @@
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\dto\LiquidacionDTO.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\excepciones\TarjetaInexistenteException.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\modelo\Consumo.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\modelo\Cotizacion.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\modelo\ItemLiquidacion.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\modelo\Liquidacion.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\modelo\Tarjeta.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\repositorios\ConsumoRepository.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\repositorios\CotizacionRepository.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\repositorios\LiquidacionRepository.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\repositorios\TarjetaRepository.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\servicios\LiquidacionService.java
+C:\Users\Administrator\Downloads\Recuperatorio-Backend\src\main\java\ar\edu\utn\frc\k5a\parcial\servicios\LiquidacionServiceImpl.java

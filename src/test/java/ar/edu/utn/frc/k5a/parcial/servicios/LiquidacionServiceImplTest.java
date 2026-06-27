@@ -2,6 +2,10 @@ package ar.edu.utn.frc.k5a.parcial.servicios;
 
 import ar.edu.utn.frc.k5a.parcial.dto.LiquidacionDTO;
 import ar.edu.utn.frc.k5a.parcial.excepciones.TarjetaInexistenteException;
+import ar.edu.utn.frc.k5a.parcial.repositorios.CotizacionRepository;
+import ar.edu.utn.frc.k5a.parcial.repositorios.ConsumoRepository;
+import ar.edu.utn.frc.k5a.parcial.repositorios.TarjetaRepository;
+import ar.edu.utn.frc.k5a.parcial.repositorios.LiquidacionRepository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -27,15 +31,6 @@ public class LiquidacionServiceImplTest {
         emf = Persistence.createEntityManagerFactory("LiquidacionesPU");
         em = emf.createEntityManager();
 
-        /*
-
-        ATENCIÓN!!!!
-
-        Esto es un Ejemplo de inicialización del servicio, pero aquí va el código
-        que hayan hecho para crear su servicio.
-        */
-
-        /*
         CotizacionRepository cotizacionRepository = new CotizacionRepository(em);
         ConsumoRepository consumoRepository = new ConsumoRepository(em);
         TarjetaRepository tarjetaRepository = new TarjetaRepository(em);
@@ -47,7 +42,6 @@ public class LiquidacionServiceImplTest {
                 tarjetaRepository,
                 liquidacionRepository
         );
-        */
     }
 
     @AfterEach
