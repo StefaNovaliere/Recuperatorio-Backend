@@ -99,13 +99,17 @@ public class LiquidacionServiceImpl implements LiquidacionService {
                     break;
                 }
                 case "OTROS": {
-                    impuesto = consumo * 0.12;
+                    impuesto = consumo * 0.0075;
                     break;
                 }
             }
         } else {
+            // Solo el rubro OTROS paga impuesto, sobre el monto ORIGINAL (sin convertir)
+            if (c.getRubro().equals("OTROS")) {
+                impuesto = consumo * 0.0075;
+            }
+            // El consumo se convierte a ARS para el total de consumos
             consumo *= this.cotizaciones.get(c.getMoneda());
-            impuesto = consumo * 0.075;
         }
 
         return new ItemLiquidacion(consumo, impuesto, descuento);
@@ -121,12 +125,16 @@ public class LiquidacionServiceImpl implements LiquidacionService {
 
     @Override
     public List<LiquidacionDTO> liquidarLote(String rutaArchivo) throws IOException {
+        // En Windows, url.getPath() devuelve "/C:/..." (barra inicial invalida para Paths.get)
+        if (rutaArchivo.matches("/[A-Za-z]:.*")) {
+            rutaArchivo = rutaArchivo.substring(1);
+        }
         return Files.lines(Paths.get(rutaArchivo))
                 .map(l -> l.split(";"))
                 .map(p -> this.generarLiquidacion(
-                        Long.parseLong(p[0]),
-                        Integer.parseInt(p[1]),
-                        Integer.parseInt(p[2])
+                        Long.parseLong(p[0].trim()),
+                        Integer.parseInt(p[1].trim()),
+                        Integer.parseInt(p[2].trim())
                 ))
                 .collect(Collectors.toList());
     }
