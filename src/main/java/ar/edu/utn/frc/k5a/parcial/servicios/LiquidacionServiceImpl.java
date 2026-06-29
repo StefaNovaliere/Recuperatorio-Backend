@@ -49,7 +49,9 @@ public class LiquidacionServiceImpl implements LiquidacionService {
         for (Consumo c : consumos) {
             total = total.acumular(this.calcularConsumo(c));
         }
-
+        if (total.getConsumos() > tarjeta.getLimiteCredito()){
+            //
+        }
         Liquidacion l = new Liquidacion();
         l.setTarjeta(tarjeta);
         l.setAnio(anio);
@@ -85,12 +87,22 @@ public class LiquidacionServiceImpl implements LiquidacionService {
 
         if (c.getMoneda().equals("ARS")) {
             // IVA: 21% sobre todos los consumos en pesos
-            impuesto = consumo * 0.21;
+            impuesto = consumo * 0.25;
 
             switch (c.getRubro()) {
                 case "OTROS": {
                     // Impuesto adicional del 12% para el rubro OTROS
                     impuesto += consumo * 0.12;
+                    break;
+                }
+                case "EDUCACION":{
+                    impuesto = 0;
+                    break;
+                }
+                case "SALUD": {
+                    if (c.getDia() >= 8) {
+                        descuento = Math.min(consumo * 0.10, 500);
+                    }
                     break;
                 }
                 case "SUPERMERCADO": {
