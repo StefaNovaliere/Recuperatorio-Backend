@@ -131,11 +131,13 @@ public class LiquidacionServiceImpl implements LiquidacionService {
             rutaArchivo = rutaArchivo.substring(1);
         }
         return Files.lines(Paths.get(rutaArchivo))
-                .map(l -> l.split(";"))
-                .map(p -> this.generarLiquidacion(
-                        Long.parseLong(p[0].trim()),
-                        Integer.parseInt(p[1].trim()),
-                        Integer.parseInt(p[2].trim())
+                .map(String::trim)
+                .filter(linea -> !linea.isEmpty())           // saltea lineas en blanco
+                .map(linea -> linea.split(";"))
+                .map(campos -> this.generarLiquidacion(
+                        Long.parseLong(campos[0].trim()),    // idTarjeta
+                        Integer.parseInt(campos[1].trim()),  // anio
+                        Integer.parseInt(campos[2].trim())   // mes
                 ))
                 .collect(Collectors.toList());
     }
