@@ -78,18 +78,27 @@ public class LiquidacionServiceImpl implements LiquidacionService {
     }
 
     private ItemLiquidacion calcularConsumo(Consumo c) {
-        double consumo = c.getMonto();
+        // Todos los importes se calculan sobre el monto convertido a ARS
+        double consumo = c.getMonto() * this.cotizaciones.get(c.getMoneda());
         double impuesto = 0;
         double descuento = 0;
 
         if (c.getMoneda().equals("ARS")) {
+            // IVA: 21% sobre todos los consumos en pesos
+            impuesto = consumo * 0.21;
+
             switch (c.getRubro()) {
-                case "COMBUSTIBLE": {
-                    descuento = Math.min(consumo * 0.15, 750);
+                case "OTROS": {
+                    // Impuesto adicional del 12% para el rubro OTROS
+                    impuesto += consumo * 0.12;
                     break;
                 }
                 case "SUPERMERCADO": {
                     descuento = Math.min(consumo * 0.20, 3000);
+                    break;
+                }
+                case "COMBUSTIBLE": {
+                    descuento = Math.min(consumo * 0.15, 750);
                     break;
                 }
                 case "RESTAURANTES": {
@@ -98,18 +107,10 @@ public class LiquidacionServiceImpl implements LiquidacionService {
                     }
                     break;
                 }
-                case "OTROS": {
-                    impuesto = consumo * 0.0075;
-                    break;
-                }
             }
         } else {
-            // Solo el rubro OTROS paga impuesto, sobre el monto ORIGINAL (sin convertir)
-            if (c.getRubro().equals("OTROS")) {
-                impuesto = consumo * 0.0075;
-            }
-            // El consumo se convierte a ARS para el total de consumos
-            consumo *= this.cotizaciones.get(c.getMoneda());
+            // Consumos en moneda extranjera: impuesto del 7.5% sobre el monto convertido
+            impuesto = consumo * 0.075;
         }
 
         return new ItemLiquidacion(consumo, impuesto, descuento);
