@@ -1,6 +1,7 @@
 package ar.edu.utn.frc.k5a.parcial.servicios;
 
 import ar.edu.utn.frc.k5a.parcial.dto.LiquidacionDTO;
+import ar.edu.utn.frc.k5a.parcial.excepciones.LimiteExcedidoException;
 import ar.edu.utn.frc.k5a.parcial.excepciones.TarjetaInexistenteException;
 import ar.edu.utn.frc.k5a.parcial.modelo.Consumo;
 import ar.edu.utn.frc.k5a.parcial.modelo.ItemLiquidacion;
@@ -49,8 +50,9 @@ public class LiquidacionServiceImpl implements LiquidacionService {
         for (Consumo c : consumos) {
             total = total.acumular(this.calcularConsumo(c));
         }
-        if (total.getConsumos() > tarjeta.getLimiteCredito()){
-            //
+        if (total.getConsumos() > tarjeta.getLimiteCredito()) {
+            throw new LimiteExcedidoException(
+                    "La tarjeta " + tarjeta.getNumero() + " supero su limite de credito");
         }
         Liquidacion l = new Liquidacion();
         l.setTarjeta(tarjeta);
@@ -87,7 +89,7 @@ public class LiquidacionServiceImpl implements LiquidacionService {
 
         if (c.getMoneda().equals("ARS")) {
             // IVA: 21% sobre todos los consumos en pesos
-            impuesto = consumo * 0.25;
+            impuesto = consumo * 0.21;
 
             switch (c.getRubro()) {
                 case "OTROS": {

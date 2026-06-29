@@ -1,1 +1,10 @@
+ar/edu/utn/frc/k5a/parcial/modelo/Tarjeta.class
+ar/edu/utn/frc/k5a/parcial/servicios/LiquidacionService.class
+ar/edu/utn/frc/k5a/parcial/modelo/Cotizacion.class
+ar/edu/utn/frc/k5a/parcial/excepciones/LimiteExcedidoException.class
+ar/edu/utn/frc/k5a/parcial/excepciones/TarjetaInexistenteException.class
+ar/edu/utn/frc/k5a/parcial/dto/LiquidacionDTO.class
+ar/edu/utn/frc/k5a/parcial/modelo/Consumo.class
+ar/edu/utn/frc/k5a/parcial/modelo/ItemLiquidacion.class
+ar/edu/utn/frc/k5a/parcial/modelo/Liquidacion.class
 ar/edu/utn/frc/k5a/parcial/servicios/LiquidacionServiceImpl.class
