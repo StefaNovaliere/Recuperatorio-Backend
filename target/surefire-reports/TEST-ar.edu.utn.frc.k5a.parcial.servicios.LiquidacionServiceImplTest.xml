@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="3.994" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="3.883" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
     <property name="javax.net.ssl.trustStorePassword" value="changeit"/>
     <property name="java.class.path" value="/home/user/Recuperatorio-Backend/target/test-classes:/home/user/Recuperatorio-Backend/target/classes:/root/.m2/repository/org/hibernate/orm/hibernate-core/6.4.4.Final/hibernate-core-6.4.4.Final.jar:/root/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/root/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/root/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/root/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/root/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/root/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.11/byte-buddy-1.14.11.jar:/root/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/root/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/root/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/root/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/root/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/root/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/root/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/root/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/root/.m2/repository/com/h2database/h2/2.4.240/h2-2.4.240.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:"/>
-    <property name="https.proxyPort" value="43107"/>
+    <property name="https.proxyPort" value="41739"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/user/Recuperatorio-Backend/target/surefire/surefirebooter-20260630175624389_3.jar /home/user/Recuperatorio-Backend/target/surefire 2026-06-30T17-56-24_282-jvmRun1 surefire-20260630175624389_1tmp surefire_0-20260630175624389_2tmp"/>
+    <property name="sun.java.command" value="/home/user/Recuperatorio-Backend/target/surefire/surefirebooter-20260630202444976_3.jar /home/user/Recuperatorio-Backend/target/surefire 2026-06-30T20-24-44_854-jvmRun1 surefire-20260630202444976_1tmp surefire_0-20260630202444976_2tmp"/>
     <property name="http.nonProxyHosts" value="localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|anthropic.com|*.anthropic.com|*.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/user/Recuperatorio-Backend/target/test-classes:/home/user/Recuperatorio-Backend/target/classes:/root/.m2/repository/org/hibernate/orm/hibernate-core/6.4.4.Final/hibernate-core-6.4.4.Final.jar:/root/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/root/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/root/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/root/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/root/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/root/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.11/byte-buddy-1.14.11.jar:/root/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/root/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/root/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/root/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/root/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/root/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/root/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/root/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/root/.m2/repository/com/h2database/h2/2.4.240/h2-2.4.240.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:"/>
@@ -34,7 +34,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="jdk.http.auth.proxying.disabledSchemes" value=""/>
-    <property name="surefire.real.class.path" value="/home/user/Recuperatorio-Backend/target/surefire/surefirebooter-20260630175624389_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/user/Recuperatorio-Backend/target/surefire/surefirebooter-20260630202444976_3.jar"/>
     <property name="javax.net.ssl.trustStore" value="/root/.ccr/java-truststore.p12"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.10+7-Ubuntu-124.04"/>
@@ -62,7 +62,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testGenerarLiquidacion" classname="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="3.335">
+  <testcase name="testGenerarLiquidacion" classname="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="3.409">
     <system-out><![CDATA[Hibernate: 
     drop table if exists CONSUMOS cascade 
 Hibernate: 
@@ -143,60 +143,53 @@ Hibernate:
         t1_0.id=?
 Hibernate: 
     select
-        c1_0.id,
-        c1_0.ANIO,
-        c1_0.DIA,
-        c1_0.MES,
-        c1_0.MONEDA,
-        c1_0.MONTO,
-        c1_0.RUBRO,
-        c1_0.ID_TARJETA 
+        l1_0.id,
+        l1_0.ANIO,
+        l1_0.MES,
+        l1_0.ID_TARJETA,
+        l1_0.TOTAL_A_PAGAR,
+        l1_0.TOTAL_CONSUMOS,
+        l1_0.TOTAL_DESCUENTOS,
+        l1_0.TOTAL_IMPUESTOS 
     from
-        CONSUMOS c1_0 
+        LIQUIDACIONES l1_0 
     join
         TARJETAS t1_0 
-            on t1_0.id=c1_0.ID_TARJETA 
+            on t1_0.id=l1_0.ID_TARJETA 
     where
         t1_0.NUMERO=? 
-        and c1_0.ANIO=? 
-        and c1_0.MES=?
-Hibernate: 
-    insert 
-    into
-        LIQUIDACIONES
-        (ANIO, MES, ID_TARJETA, TOTAL_A_PAGAR, TOTAL_CONSUMOS, TOTAL_DESCUENTOS, TOTAL_IMPUESTOS, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
+        and l1_0.ANIO=? 
+        and l1_0.MES=?
 ]]></system-out>
-    <system-err><![CDATA[Jun 30, 2026 5:56:25 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+    <system-err><![CDATA[Jun 30, 2026 8:24:46 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [name: LiquidacionesPU]
-Jun 30, 2026 5:56:25 PM org.hibernate.Version logVersion
+Jun 30, 2026 8:24:46 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate ORM core version 6.4.4.Final
-Jun 30, 2026 5:56:25 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+Jun 30, 2026 8:24:46 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
 INFO: HHH000026: Second-level cache disabled
-Jun 30, 2026 5:56:25 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Jun 30, 2026 8:24:46 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-Jun 30, 2026 5:56:25 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:46 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001005: Loaded JDBC driver class: org.h2.Driver
-Jun 30, 2026 5:56:25 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:46 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:liquidaciones;DB_CLOSE_DELAY=-1]
-Jun 30, 2026 5:56:25 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:46 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001001: Connection properties: {password=****, user=sa}
-Jun 30, 2026 5:56:25 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:46 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001003: Autocommit mode: false
-Jun 30, 2026 5:56:25 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+Jun 30, 2026 8:24:46 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
 INFO: HHH10001115: Connection pool size: 20 (min=1)
-Jun 30, 2026 5:56:27 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+Jun 30, 2026 8:24:48 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
 INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Jun 30, 2026 5:56:27 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78116659] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Jun 30, 2026 5:56:27 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3a6e9856] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+Jun 30, 2026 8:24:48 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2aee0704] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Jun 30, 2026 8:24:48 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1ecf0ac6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
 INFO: HHH10001008: Cleaning up connection pool [jdbc:h2:mem:liquidaciones;DB_CLOSE_DELAY=-1]
 ]]></system-err>
   </testcase>
-  <testcase name="testLiquidarLote" classname="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="0.241">
+  <testcase name="testLiquidarLote" classname="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="0.188">
     <system-out><![CDATA[Hibernate: 
     drop table if exists CONSUMOS cascade 
 Hibernate: 
@@ -277,30 +270,23 @@ Hibernate:
         t1_0.id=?
 Hibernate: 
     select
-        c1_0.id,
-        c1_0.ANIO,
-        c1_0.DIA,
-        c1_0.MES,
-        c1_0.MONEDA,
-        c1_0.MONTO,
-        c1_0.RUBRO,
-        c1_0.ID_TARJETA 
+        l1_0.id,
+        l1_0.ANIO,
+        l1_0.MES,
+        l1_0.ID_TARJETA,
+        l1_0.TOTAL_A_PAGAR,
+        l1_0.TOTAL_CONSUMOS,
+        l1_0.TOTAL_DESCUENTOS,
+        l1_0.TOTAL_IMPUESTOS 
     from
-        CONSUMOS c1_0 
+        LIQUIDACIONES l1_0 
     join
         TARJETAS t1_0 
-            on t1_0.id=c1_0.ID_TARJETA 
+            on t1_0.id=l1_0.ID_TARJETA 
     where
         t1_0.NUMERO=? 
-        and c1_0.ANIO=? 
-        and c1_0.MES=?
-Hibernate: 
-    insert 
-    into
-        LIQUIDACIONES
-        (ANIO, MES, ID_TARJETA, TOTAL_A_PAGAR, TOTAL_CONSUMOS, TOTAL_DESCUENTOS, TOTAL_IMPUESTOS, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
+        and l1_0.ANIO=? 
+        and l1_0.MES=?
 Hibernate: 
     select
         t1_0.id,
@@ -313,30 +299,23 @@ Hibernate:
         t1_0.id=?
 Hibernate: 
     select
-        c1_0.id,
-        c1_0.ANIO,
-        c1_0.DIA,
-        c1_0.MES,
-        c1_0.MONEDA,
-        c1_0.MONTO,
-        c1_0.RUBRO,
-        c1_0.ID_TARJETA 
+        l1_0.id,
+        l1_0.ANIO,
+        l1_0.MES,
+        l1_0.ID_TARJETA,
+        l1_0.TOTAL_A_PAGAR,
+        l1_0.TOTAL_CONSUMOS,
+        l1_0.TOTAL_DESCUENTOS,
+        l1_0.TOTAL_IMPUESTOS 
     from
-        CONSUMOS c1_0 
+        LIQUIDACIONES l1_0 
     join
         TARJETAS t1_0 
-            on t1_0.id=c1_0.ID_TARJETA 
+            on t1_0.id=l1_0.ID_TARJETA 
     where
         t1_0.NUMERO=? 
-        and c1_0.ANIO=? 
-        and c1_0.MES=?
-Hibernate: 
-    insert 
-    into
-        LIQUIDACIONES
-        (ANIO, MES, ID_TARJETA, TOTAL_A_PAGAR, TOTAL_CONSUMOS, TOTAL_DESCUENTOS, TOTAL_IMPUESTOS, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
+        and l1_0.ANIO=? 
+        and l1_0.MES=?
 Hibernate: 
     select
         t1_0.id,
@@ -347,6 +326,25 @@ Hibernate:
         TARJETAS t1_0 
     where
         t1_0.id=?
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.ANIO,
+        l1_0.MES,
+        l1_0.ID_TARJETA,
+        l1_0.TOTAL_A_PAGAR,
+        l1_0.TOTAL_CONSUMOS,
+        l1_0.TOTAL_DESCUENTOS,
+        l1_0.TOTAL_IMPUESTOS 
+    from
+        LIQUIDACIONES l1_0 
+    join
+        TARJETAS t1_0 
+            on t1_0.id=l1_0.ID_TARJETA 
+    where
+        t1_0.NUMERO=? 
+        and l1_0.ANIO=? 
+        and l1_0.MES=?
 Hibernate: 
     select
         c1_0.id,
@@ -374,33 +372,33 @@ Hibernate:
     values
         (?, ?, ?, ?, ?, ?, ?, default)
 ]]></system-out>
-    <system-err><![CDATA[Jun 30, 2026 5:56:28 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+    <system-err><![CDATA[Jun 30, 2026 8:24:49 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [name: LiquidacionesPU]
-Jun 30, 2026 5:56:28 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+Jun 30, 2026 8:24:49 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
 INFO: HHH000026: Second-level cache disabled
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001005: Loaded JDBC driver class: org.h2.Driver
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:liquidaciones;DB_CLOSE_DELAY=-1]
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001001: Connection properties: {password=****, user=sa}
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001003: Autocommit mode: false
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
 INFO: HHH10001115: Connection pool size: 20 (min=1)
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
 INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Jun 30, 2026 5:56:28 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3acc3ee] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Jun 30, 2026 5:56:28 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5972e3a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+Jun 30, 2026 8:24:49 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@62808e9e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Jun 30, 2026 8:24:49 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@539dd2d0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
 INFO: HHH10001008: Cleaning up connection pool [jdbc:h2:mem:liquidaciones;DB_CLOSE_DELAY=-1]
 ]]></system-err>
   </testcase>
-  <testcase name="testTarjetaInexistente" classname="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="0.161">
+  <testcase name="testTarjetaInexistente" classname="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="0.109">
     <system-out><![CDATA[Hibernate: 
     drop table if exists CONSUMOS cascade 
 Hibernate: 
@@ -480,33 +478,33 @@ Hibernate:
     where
         t1_0.id=?
 ]]></system-out>
-    <system-err><![CDATA[Jun 30, 2026 5:56:28 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+    <system-err><![CDATA[Jun 30, 2026 8:24:49 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [name: LiquidacionesPU]
-Jun 30, 2026 5:56:28 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+Jun 30, 2026 8:24:49 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
 INFO: HHH000026: Second-level cache disabled
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001005: Loaded JDBC driver class: org.h2.Driver
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:liquidaciones;DB_CLOSE_DELAY=-1]
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001001: Connection properties: {password=****, user=sa}
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001003: Autocommit mode: false
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
 INFO: HHH10001115: Connection pool size: 20 (min=1)
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
 INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Jun 30, 2026 5:56:28 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6f7b8ae1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Jun 30, 2026 5:56:28 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6c8d8b60] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+Jun 30, 2026 8:24:49 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6c225adb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Jun 30, 2026 8:24:49 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@69cc49ec] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
 INFO: HHH10001008: Cleaning up connection pool [jdbc:h2:mem:liquidaciones;DB_CLOSE_DELAY=-1]
 ]]></system-err>
   </testcase>
-  <testcase name="testGetLiquidacionesPendientes" classname="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="0.233">
+  <testcase name="testGetLiquidacionesPendientes" classname="ar.edu.utn.frc.k5a.parcial.servicios.LiquidacionServiceImplTest" time="0.154">
     <system-out><![CDATA[Hibernate: 
     drop table if exists CONSUMOS cascade 
 Hibernate: 
@@ -593,6 +591,25 @@ Hibernate:
             and l1_0.MES=?)
 Hibernate: 
     select
+        l1_0.id,
+        l1_0.ANIO,
+        l1_0.MES,
+        l1_0.ID_TARJETA,
+        l1_0.TOTAL_A_PAGAR,
+        l1_0.TOTAL_CONSUMOS,
+        l1_0.TOTAL_DESCUENTOS,
+        l1_0.TOTAL_IMPUESTOS 
+    from
+        LIQUIDACIONES l1_0 
+    join
+        TARJETAS t1_0 
+            on t1_0.id=l1_0.ID_TARJETA 
+    where
+        t1_0.NUMERO=? 
+        and l1_0.ANIO=? 
+        and l1_0.MES=?
+Hibernate: 
+    select
         c1_0.id,
         c1_0.ANIO,
         c1_0.DIA,
@@ -634,29 +651,29 @@ Hibernate:
             l1_0.ANIO=? 
             and l1_0.MES=?)
 ]]></system-out>
-    <system-err><![CDATA[Jun 30, 2026 5:56:28 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+    <system-err><![CDATA[Jun 30, 2026 8:24:49 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [name: LiquidacionesPU]
-Jun 30, 2026 5:56:28 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+Jun 30, 2026 8:24:49 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
 INFO: HHH000026: Second-level cache disabled
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001005: Loaded JDBC driver class: org.h2.Driver
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:liquidaciones;DB_CLOSE_DELAY=-1]
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001001: Connection properties: {password=****, user=sa}
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001003: Autocommit mode: false
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
 INFO: HHH10001115: Connection pool size: 20 (min=1)
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
 INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Jun 30, 2026 5:56:28 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4aea57dc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Jun 30, 2026 5:56:28 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@66abc325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Jun 30, 2026 5:56:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+Jun 30, 2026 8:24:49 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3d73cd78] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Jun 30, 2026 8:24:49 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@acd115d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Jun 30, 2026 8:24:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
 INFO: HHH10001008: Cleaning up connection pool [jdbc:h2:mem:liquidaciones;DB_CLOSE_DELAY=-1]
 ]]></system-err>
   </testcase>

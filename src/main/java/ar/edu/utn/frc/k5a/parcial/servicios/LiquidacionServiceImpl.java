@@ -71,8 +71,7 @@ public class LiquidacionServiceImpl implements LiquidacionService {
         l.setTotalConsumos(total.getConsumos());
         l.setTotalImpuestos(total.getImpuestos());
         l.setTotalDescuentos(total.getDescuentos());
-        l.setTotalAPagar(total.getTotal());
-        // Cambio clave: Forzamos explícitamente Consumos + Impuestos - Descuentos
+        // Total a pagar = Consumos + Impuestos - Descuentos
         l.setTotalAPagar(total.getConsumos() + total.getImpuestos() - total.getDescuentos());
         liquidacionRepository.guardar(l);
 
@@ -147,8 +146,8 @@ public class LiquidacionServiceImpl implements LiquidacionService {
             return null;
         }
         return map(optionalLiquidacion.get());
-        }
     }
+
     @Override
     public List<LiquidacionDTO> liquidarLote(String rutaArchivo) throws IOException {
         // Corrección para rutas en entornos Windows si vienen de un URL resource
