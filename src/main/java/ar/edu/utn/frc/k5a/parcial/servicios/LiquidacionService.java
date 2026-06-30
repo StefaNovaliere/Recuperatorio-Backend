@@ -17,7 +17,7 @@ public interface LiquidacionService {
      * @Throws TarjetaInexistenteException si la tarjeta solicitada no existe
      */
     LiquidacionDTO generarLiquidacion(long idTarjeta, int anio, int mes) throws TarjetaInexistenteException;
-
+    LiquidacionDTO buscarLiquidacionExistente(String numeroTarjeta, int anio, int mes);
     /**
      * Retorna una lista con el Número (NO el ID) de las tarjetas que no tienen una liquidación
      * para el Año y Mes especificados.
@@ -35,6 +35,7 @@ public interface LiquidacionService {
      * @param rutaArchivo Ruta del archivo a procesar
      * @return lista con las liquidaciones procesadas.
      */
+
     List<LiquidacionDTO> liquidarLote(String rutaArchivo) throws IOException;
 
 }
