@@ -121,7 +121,7 @@ public class LiquidacionServiceImpl implements LiquidacionService {
         return consumoRepository.contarConsumosDeTarjeta(numero, anio, mes);
     }
     @Override
-    public List<Consumo> monedasUsadasPorTarjeta(String numero, int anio, int mes){
+    public List<String> monedasUsadasPorTarjeta(String numero, int anio, int mes){
         return consumoRepository.monedasUsadasPorTarjeta(numero, anio, mes);
     }
     @Override

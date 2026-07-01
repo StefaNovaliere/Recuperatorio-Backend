@@ -2,9 +2,6 @@ package ar.edu.utn.frc.k5a.parcial.servicios;
 
 import ar.edu.utn.frc.k5a.parcial.dto.LiquidacionDTO;
 import ar.edu.utn.frc.k5a.parcial.excepciones.TarjetaInexistenteException;
-import ar.edu.utn.frc.k5a.parcial.modelo.Consumo;
-import ar.edu.utn.frc.k5a.parcial.modelo.Liquidacion;
-import ar.edu.utn.frc.k5a.parcial.modelo.Tarjeta;
 import ar.edu.utn.frc.k5a.parcial.repositorios.ConsumoRepository;
 import ar.edu.utn.frc.k5a.parcial.repositorios.CotizacionRepository;
 import ar.edu.utn.frc.k5a.parcial.repositorios.LiquidacionRepository;
@@ -101,7 +98,7 @@ public class LiquidacionServiceImplTest {
     @Test
     void testMonedasUsadasPorTarjeta(){
         em.getTransaction().begin();
-        List<Consumo> monedas = liquidacionService.monedasUsadasPorTarjeta("4500123412340006",2026, 5);
+        List<String> monedas = liquidacionService.monedasUsadasPorTarjeta("4500123412340006",2026, 5);
         em.getTransaction().commit();
         assertEquals(4L, monedas.size());
     }

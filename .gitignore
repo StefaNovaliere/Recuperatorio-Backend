@@ -1,0 +1,19 @@
+# Compilados de Maven
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
