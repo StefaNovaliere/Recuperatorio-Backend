@@ -117,6 +117,18 @@ public class LiquidacionServiceImpl implements LiquidacionService {
         return tarjetaRepository.tarjetasQueGastaronMasDe(monto, anio, mes);
     }
     @Override
+    public long contarConsumosDeTarjeta(String numero, int anio, int mes){
+        return consumoRepository.contarConsumosDeTarjeta(numero, anio, mes);
+    }
+    @Override
+    public List<Consumo> monedasUsadasPorTarjeta(String numero, int anio, int mes){
+        return consumoRepository.monedasUsadasPorTarjeta(numero, anio, mes);
+    }
+    @Override
+    public double totalConsumidoEnMoneda(String moneda, int anio, int mes){
+        return consumoRepository.totalConsumidoEnMoneda(moneda, anio, mes);
+    }
+    @Override
     public List<LiquidacionDTO> buscarLiquidacionPeriodo(int anio, int mes){
         List<Liquidacion> liquidaciones = liquidacionRepository.buscarLiquidacionPeriodo(anio, mes);
         return liquidaciones.stream()

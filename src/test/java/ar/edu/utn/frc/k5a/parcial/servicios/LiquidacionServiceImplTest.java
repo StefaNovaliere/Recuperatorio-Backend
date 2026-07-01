@@ -2,6 +2,7 @@ package ar.edu.utn.frc.k5a.parcial.servicios;
 
 import ar.edu.utn.frc.k5a.parcial.dto.LiquidacionDTO;
 import ar.edu.utn.frc.k5a.parcial.excepciones.TarjetaInexistenteException;
+import ar.edu.utn.frc.k5a.parcial.modelo.Consumo;
 import ar.edu.utn.frc.k5a.parcial.modelo.Liquidacion;
 import ar.edu.utn.frc.k5a.parcial.modelo.Tarjeta;
 import ar.edu.utn.frc.k5a.parcial.repositorios.ConsumoRepository;
@@ -84,9 +85,30 @@ public class LiquidacionServiceImplTest {
         assertEquals(1584130.63, total, "Dio el resultado esperado 1584130.63");
     }
     @Test
+    void testContarConsumosTarjeta(){
+        em.getTransaction().begin();
+        long cantidadConsumos = liquidacionService.contarConsumosDeTarjeta("4500123412340001", 2026, 5);
+        em.getTransaction().commit();
+        assertEquals(15L, cantidadConsumos);
+    }
+    @Test
+    void testCantidadConsumidoMoneda(){
+        em.getTransaction().begin();
+        double cantidadConsumidaMoneda = liquidacionService.totalConsumidoEnMoneda("USD", 2026, 5);
+        em.getTransaction().commit();
+        assertEquals(532.5, cantidadConsumidaMoneda, 0.01);
+    }
+    @Test
+    void testMonedasUsadasPorTarjeta(){
+        em.getTransaction().begin();
+        List<Consumo> monedas = liquidacionService.monedasUsadasPorTarjeta("4500123412340006",2026, 5);
+        em.getTransaction().commit();
+        assertEquals(4L, monedas.size());
+    }
+    @Test
     void testTarjetasGastaronMasDe(){
         em.getTransaction().begin();
-        long tarjetasExcedidas = liquidacionService.tarjetasQueGastaronMasDe(40.000, 2026, 5);
+        long tarjetasExcedidas = liquidacionService.tarjetasQueGastaronMasDe(40000, 2026, 5);
         em.getTransaction().commit();
         assertEquals(5L, tarjetasExcedidas);
     }
