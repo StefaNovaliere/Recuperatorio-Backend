@@ -25,4 +25,14 @@ public class TarjetaRepository {
                 .setParameter("mes", mes)
                 .getResultList();
     }
+    public long tarjetasQueGastaronMasDe(double monto, int anio, int mes){
+        String jpql = "SELECT COUNT(l) FROM Liquidacion l WHERE l.totalConsumos > :monto AND l.anio = :anio AND l.mes = :mes";
+        Long total = em.createQuery(jpql, Long.class)
+                .setParameter("monto", monto)
+                .setParameter("anio", anio)
+                .setParameter("mes", mes)
+                .getSingleResult();
+        return total;
+
+    }
 }

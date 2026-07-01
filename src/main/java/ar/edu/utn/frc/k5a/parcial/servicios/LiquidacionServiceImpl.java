@@ -105,13 +105,32 @@ public class LiquidacionServiceImpl implements LiquidacionService {
         // TODO (presencial): implementar
     }
     @Override
-    public LiquidacionDTO buscarLiquidacionExistente(String numeroTarjeta, int anio, int mes){
-        Optional<Liquidacion> liquidacionExistente = liquidacionRepository.buscarPorTarjetaYPeriodo(numeroTarjeta, anio, mes);
-        if (liquidacionExistente.isEmpty()){
-            return null;
-        }
-        return map(liquidacionExistente.get());
+    public long contarLiquidacionesPeriodo(int anio, int mes){
+        return liquidacionRepository.contarLiquidacionesPeriodo(anio, mes);
     }
+    @Override
+    public double totalAPagarDelPeriodo(int anio, int mes){
+        return liquidacionRepository.totalAPagarDelPeriodo(anio, mes);
+    }
+    @Override
+    public long tarjetasQueGastaronMasDe(double monto, int anio, int mes){
+        return tarjetaRepository.tarjetasQueGastaronMasDe(monto, anio, mes);
+    }
+    @Override
+    public List<LiquidacionDTO> buscarLiquidacionPeriodo(int anio, int mes){
+        List<Liquidacion> liquidaciones = liquidacionRepository.buscarLiquidacionPeriodo(anio, mes);
+        return liquidaciones.stream()
+                .map(liquidacion -> map(liquidacion))
+                .collect(Collectors.toList());
+    }
+    //@Override
+    //public LiquidacionDTO buscarLiquidacionExistente(String numeroTarjeta, int anio, int mes){
+    //    Optional<Liquidacion> liquidacionExistente = liquidacionRepository.buscarPorTarjetaYPeriodo(numeroTarjeta, anio, mes);
+    //    if (liquidacionExistente.isEmpty()){
+    //        return null;
+    //    }
+    //    return map(liquidacionExistente.get());
+    //}
     @Override
     public List<LiquidacionDTO> liquidarLote(String rutaArchivo) throws IOException {
         // Corrección para rutas en entornos Windows si vienen de un URL resource

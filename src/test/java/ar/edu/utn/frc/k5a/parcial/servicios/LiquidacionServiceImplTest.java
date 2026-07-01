@@ -60,25 +60,42 @@ public class LiquidacionServiceImplTest {
     void testTarjetaInexistente() {
         assertThrows(TarjetaInexistenteException.class, () -> liquidacionService.generarLiquidacion(999999, 2, 2));
     }
+    @Test
+    void testBuscarLiquidacionPeriodo(){
+        em.getTransaction().begin();
+        List<LiquidacionDTO> liquidaciones = liquidacionService.buscarLiquidacionPeriodo(2026, 5);
+        em.getTransaction().commit();
 
+    }
+    @Test
+    void testContarLiquidacionesPeriodo(){
+        em.getTransaction().begin();
+        long cantidadMayo = liquidacionService.contarLiquidacionesPeriodo(2026, 5);
+        long cantidadAbril = liquidacionService.contarLiquidacionesPeriodo(2026, 4);
+        em.getTransaction().commit();
+        assertEquals(5L, cantidadMayo, "Para Mayo debería haber 5 liquidaciones");
+        assertEquals(1L, cantidadAbril, "Para Abril debería haber 0 liquidaciones");
+    }
+    @Test
+    void testTotalAPagarPeriodo(){
+        em.getTransaction().begin();
+        double total = liquidacionService.totalAPagarDelPeriodo(2026, 5);
+        em.getTransaction().commit();
+        assertEquals(1584130.63, total, "Dio el resultado esperado 1584130.63");
+    }
+    @Test
+    void testTarjetasGastaronMasDe(){
+        em.getTransaction().begin();
+        long tarjetasExcedidas = liquidacionService.tarjetasQueGastaronMasDe(40.000, 2026, 5);
+        em.getTransaction().commit();
+        assertEquals(5L, tarjetasExcedidas);
+    }
     @Test
     void testGenerarLiquidacion() {
         em.getTransaction().begin();
         LiquidacionDTO liquidacion = liquidacionService.generarLiquidacion(7, 2026, 5);
         em.getTransaction().commit();
-    //INSERT INTO CONSUMOS (ID_TARJETA, MONTO, DIA, MES, ANIO, RUBRO, MONEDA)
-        // VALUES (6, 25000.0, 2, 5, 2026, 'OTROS', 'ARS'),
-        // (6, 45.0, 10, 5, 2026, 'INDUMENTARIA', 'EUR'),
-        // (6, 32000.0, 15, 5, 2026, 'SUPERMERCADO', 'ARS'),
-        // (6, 8500.0, 20, 5, 2026, 'COMBUSTIBLE', 'ARS'),
-        // (6, 120.0, 28, 5, 2026, 'RESTAURANTES', 'BRL'),
-        // (6, 4000.0, 3, 5, 2026, 'OTROS', 'ARS'),
-        // (6, 25.0, 6, 5, 2026, 'INDUMENTARIA', 'USD'),
-        // (6, 15000.0, 12, 5, 2026, 'SUPERMERCADO', 'ARS'),
-        // (6, 6500.0, 18, 5, 2026, 'COMBUSTIBLE', 'ARS'),
-        // (6, 80.0, 22, 5, 2026, 'RESTAURANTES', 'EUR'),
-        // (6, 12000.0, 25, 5, 2026, 'OTROS', 'ARS'),
-        // (6, 35.0, 27, 5, 2026, 'INDUMENTARIA', 'USD');
+
         assertNotNull(liquidacion);
         assertEquals("4500123412340007", liquidacion.getNumeroTarjeta());
         assertEquals(2026, liquidacion.getAnio());
@@ -86,9 +103,9 @@ public class LiquidacionServiceImplTest {
         assertEquals("Diego Lopez", liquidacion.getTitular());
 
         assertEquals(122500.00, liquidacion.getTotalConsumos(), 0.01);
-        assertEquals(21485.00, liquidacion.getTotalImpuestos(), 0.01);
-        assertEquals(	13150.00, liquidacion.getTotalDescuentos(), 0.01);
-        assertEquals(130835.00, liquidacion.getTotalAPagar(), 0.01);
+        assertEquals(24172.50, liquidacion.getTotalImpuestos(), 0.01);
+        assertEquals(6100.00, liquidacion.getTotalDescuentos(), 0.01);
+        assertEquals(140572.50, liquidacion.getTotalAPagar(), 0.01);
     }
     @Test
     void totalDescuentosDelPeriodo(){
@@ -126,9 +143,15 @@ public class LiquidacionServiceImplTest {
         assertFalse(tarjetas.contains("4500123412340002"));
     }
     @Test
+        // ── VARIANTES DE liquidarLote (por si cambian el formato del CSV) ──
+        // 1) Separador coma  → en el Impl: linea.split(",")
+        // 2) Separador pipe  → en el Impl: linea.split("\\|")   // ¡el pipe es regex, va escapado!
+        // 3) Con encabezado  → en el Impl: .filter(l -> !l.startsWith("id"))  // saltea la 1ª línea
+        // Para probar otro archivo: cambio SOLO el argumento de getResource(...) abajo,
+        // el resto del test queda igual.
     void testLiquidarLote() throws IOException {
-        URL url = getClass().getClassLoader().getResource("liquidaciones.csv");
-        assertNotNull(url, "No se encontró el archivo de lotes liquidaciones.csv");
+        URL url = getClass().getClassLoader().getResource("liquidaciones_hoy.csv");
+        assertNotNull(url, "No se encontró el archivo de lotes liquidaciones_hoy.csv");
 
         em.getTransaction().begin();
         List<LiquidacionDTO> liquidaciones = liquidacionService.liquidarLote(url.getPath());

@@ -2,6 +2,7 @@ package ar.edu.utn.frc.k5a.parcial.servicios;
 
 import ar.edu.utn.frc.k5a.parcial.dto.LiquidacionDTO;
 import ar.edu.utn.frc.k5a.parcial.excepciones.TarjetaInexistenteException;
+import ar.edu.utn.frc.k5a.parcial.modelo.Tarjeta;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,8 +19,11 @@ public interface LiquidacionService {
      */
     List<String> tarjetasConConsumoEnMoneda(String moneda, int anio, int mes);
     LiquidacionDTO generarLiquidacion(long idTarjeta, int anio, int mes) throws TarjetaInexistenteException;
-    LiquidacionDTO buscarLiquidacionExistente(String numeroTarjeta, int anio, int mes);
+    List<LiquidacionDTO> buscarLiquidacionPeriodo(int anio, int mes);
+    long contarLiquidacionesPeriodo(int anio, int mes);
     double totalDescuentosDelPeriodo(int anio, int mes);
+    double totalAPagarDelPeriodo(int anio, int mes);
+    long tarjetasQueGastaronMasDe(double monto, int anio, int mes);
     /**
      * Retorna una lista con el Número (NO el ID) de las tarjetas que no tienen una liquidación
      * para el Año y Mes especificados.
