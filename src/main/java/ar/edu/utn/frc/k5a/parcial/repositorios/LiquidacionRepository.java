@@ -15,6 +15,17 @@ public class LiquidacionRepository {
         em.persist(liquidacion);
     }
 
+    public double totalDescuentosDelPeriodo(int anio, int mes){
+        String jpql = "SELECT SUM (l.totalDescuentos) FROM Liquidacion l WHERE l.anio = :anio AND l.mes = :mes";
+        Double total = em.createQuery(jpql, Double.class)
+                .setParameter("anio", anio)
+                .setParameter("mes", mes)
+                .getSingleResult();
+        if (total == 0){
+            return 0.0;
+        }
+        return total;
+    }
     // La liquidacion de una tarjeta (por NUMERO) para un anio/mes especifico
     public Optional<Liquidacion> buscarPorTarjetaYPeriodo(String numero, int anio, int mes) {
         String jpql = "SELECT l FROM Liquidacion l WHERE l.tarjeta.numero = :numero " +

@@ -2,6 +2,7 @@ package ar.edu.utn.frc.k5a.parcial.servicios;
 
 import ar.edu.utn.frc.k5a.parcial.dto.LiquidacionDTO;
 import ar.edu.utn.frc.k5a.parcial.excepciones.TarjetaInexistenteException;
+import ar.edu.utn.frc.k5a.parcial.modelo.Liquidacion;
 import ar.edu.utn.frc.k5a.parcial.modelo.Tarjeta;
 import ar.edu.utn.frc.k5a.parcial.repositorios.ConsumoRepository;
 import ar.edu.utn.frc.k5a.parcial.repositorios.CotizacionRepository;
@@ -63,7 +64,7 @@ public class LiquidacionServiceImplTest {
     @Test
     void testGenerarLiquidacion() {
         em.getTransaction().begin();
-        LiquidacionDTO liquidacion = liquidacionService.generarLiquidacion(6, 2026, 5);
+        LiquidacionDTO liquidacion = liquidacionService.generarLiquidacion(7, 2026, 5);
         em.getTransaction().commit();
     //INSERT INTO CONSUMOS (ID_TARJETA, MONTO, DIA, MES, ANIO, RUBRO, MONEDA)
         // VALUES (6, 25000.0, 2, 5, 2026, 'OTROS', 'ARS'),
@@ -79,20 +80,28 @@ public class LiquidacionServiceImplTest {
         // (6, 12000.0, 25, 5, 2026, 'OTROS', 'ARS'),
         // (6, 35.0, 27, 5, 2026, 'INDUMENTARIA', 'USD');
         assertNotNull(liquidacion);
-        assertEquals("4500123412340006", liquidacion.getNumeroTarjeta());
+        assertEquals("4500123412340007", liquidacion.getNumeroTarjeta());
         assertEquals(2026, liquidacion.getAnio());
         assertEquals(5, liquidacion.getMes());
-        assertEquals("Laura Torres", liquidacion.getTitular());
+        assertEquals("Diego Lopez", liquidacion.getTitular());
 
-        assertEquals(439600.00, liquidacion.getTotalConsumos(), 0.01);
-        assertEquals(52658.00, liquidacion.getTotalImpuestos(), 0.01);
-        assertEquals(	7500.00, liquidacion.getTotalDescuentos(), 0.01);
-        assertEquals(484758.00, liquidacion.getTotalAPagar(), 0.01);
+        assertEquals(122500.00, liquidacion.getTotalConsumos(), 0.01);
+        assertEquals(21485.00, liquidacion.getTotalImpuestos(), 0.01);
+        assertEquals(	13150.00, liquidacion.getTotalDescuentos(), 0.01);
+        assertEquals(130835.00, liquidacion.getTotalAPagar(), 0.01);
     }
     @Test
-    void testGetLiquidacionesPendientes() {
+    void totalDescuentosDelPeriodo(){
         em.getTransaction().begin();
-        List<String> pendientesAntes = liquidacionService.tarjetaSinLiquidacion(2026, 5);
+        double totalDescuentos = liquidacionService.totalDescuentosDelPeriodo(2026, 5);
+        em.getTransaction().commit();
+        assertEquals(25650.0, totalDescuentos, 0.01);
+        assertEquals(25650.0, totalDescuentos, 0.01);
+    }
+    @Test
+    void numerosSinLiquidar() {
+        em.getTransaction().begin();
+        List<String> pendientesAntes = liquidacionService.numerosSinLiquidar(2026, 5);
         // data.sql precarga liquidaciones de las tarjetas 1 a 5 para 05/2026: quedan 5 pendientes (6 a 10)
         assertEquals(5, pendientesAntes.size());
 
@@ -101,7 +110,7 @@ public class LiquidacionServiceImplTest {
         em.getTransaction().commit();
 
         em.getTransaction().begin();
-        List<String> pendientesDespues = liquidacionService.tarjetaSinLiquidacion(2026, 5);
+        List<String> pendientesDespues = liquidacionService.numerosSinLiquidar(2026, 5);
         assertEquals(4, pendientesDespues.size());
         assertFalse(pendientesDespues.contains("4500123412340006"));
         em.getTransaction().commit();

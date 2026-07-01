@@ -19,7 +19,7 @@ public interface LiquidacionService {
     List<String> tarjetasConConsumoEnMoneda(String moneda, int anio, int mes);
     LiquidacionDTO generarLiquidacion(long idTarjeta, int anio, int mes) throws TarjetaInexistenteException;
     LiquidacionDTO buscarLiquidacionExistente(String numeroTarjeta, int anio, int mes);
-
+    double totalDescuentosDelPeriodo(int anio, int mes);
     /**
      * Retorna una lista con el Número (NO el ID) de las tarjetas que no tienen una liquidación
      * para el Año y Mes especificados.
@@ -27,7 +27,7 @@ public interface LiquidacionService {
      * @param mes El mes a consultar
      * @return Lista de números de tarjetas sin liquidaciones.
      */
-    List<String> tarjetaSinLiquidacion(int anio, int mes);
+    List<String> numerosSinLiquidar(int anio, int mes);
 
     /**
      * Realiza la liquidación de un lote de tarjetas, leyendo este lote de un archivo CSV
