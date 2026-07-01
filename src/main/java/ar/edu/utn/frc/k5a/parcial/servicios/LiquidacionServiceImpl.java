@@ -23,15 +23,17 @@ public class LiquidacionServiceImpl implements LiquidacionService {
 
     // CONSTANTES DE LAS REGLAS (faciles de modificar si la consigna cambia un porcentaje)
     private static final double IVA_ARS = 0.21;
-    private static final double ADICION_OTROS = 0.12;
-    private static final double IMPUESTO_EXTRANJERA = 0.075;
-    private static final double PORC_DESC_COMBUSTIBLE = 0.15;
-    private static final double TOPE_DESC_COMBUSTIBLE = 750.0;
+    private static final double ADICION_OTROS = 0.10;
+    private static final double IMPUESTO_EXTRANJERA = 0.08;
+    private static final double PORC_DESC_COMBUSTIBLE = 0.10;
+    private static final double TOPE_DESC_COMBUSTIBLE = 1000.0;
     private static final double PORC_DESC_SUPERMERCADO = 0.20;
     private static final double TOPE_DESC_SUPERMERCADO = 3000.0;
-    private static final double PORC_DESC_RESTAURANTE = 0.25;
-    private static final int DIA_MIN_REST = 10;
-    private static final int DIA_MAX_REST = 15;
+    private static final double PORC_DESC_RESTAURANTE = 0.20;
+    private static final double PORC_DESC_INDUMENTARIA = 0.05;
+    private static final double TOPE_DESC_INDUMENTARIA = 500.0;
+    private static final int DIA_MIN_REST = 1;
+    private static final int DIA_MAX_REST = 10;
 
     private final CotizacionRepository cotizacionRepository;
     private final ConsumoRepository consumoRepository;
@@ -82,9 +84,16 @@ public class LiquidacionServiceImpl implements LiquidacionService {
         liquidacionRepository.guardar(l);
         return map(l);
     }
-
     @Override
-    public List<String> getLiquidacionesPendientes(int anio, int mes) {
+    public List<String> tarjetasConConsumoEnMoneda(String moneda, int anio, int mes){
+        List<Consumo> consumosMoneda = consumoRepository.buscarPorMonedaYFecha(moneda, anio, mes);
+        return consumosMoneda.stream()
+                .map(consumo -> consumo.getTarjeta().getNumero())
+                .distinct()
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<String> tarjetaSinLiquidacion(int anio, int mes) {
         List<Tarjeta> tarjetasPendientes = tarjetaRepository.buscarSinLiquidacion(anio, mes);
         return tarjetasPendientes.stream()
                 .map(tarjeta -> tarjeta.getNumero())
@@ -147,6 +156,10 @@ public class LiquidacionServiceImpl implements LiquidacionService {
                     if (c.getDia() >= DIA_MIN_REST && c.getDia() <= DIA_MAX_REST) {
                         descuento = consumo * PORC_DESC_RESTAURANTE;
                     }
+                    break;
+                }
+                case "INDUMENTARIA": {
+                    descuento = Math.min(consumo *  PORC_DESC_INDUMENTARIA, TOPE_DESC_INDUMENTARIA);
                     break;
                 }
                 case "OTROS": {

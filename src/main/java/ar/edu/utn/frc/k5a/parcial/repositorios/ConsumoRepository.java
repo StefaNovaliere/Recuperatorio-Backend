@@ -10,7 +10,15 @@ import java.util.List;
 public class ConsumoRepository {
 
     private EntityManager em;
-
+    public List<Consumo> buscarPorMonedaYFecha(String moneda, int anio, int mes){
+        String jpql = "SELECT c FROM Consumo c WHERE c.moneda = :moneda " +
+                "AND c.anio = :anio AND c.mes = :mes";
+        return em.createQuery(jpql, Consumo.class)
+                .setParameter("moneda", moneda)
+                .setParameter("anio", anio)
+                .setParameter("mes", mes)
+                .getResultList();
+    }
     // Consumos de una tarjeta (por NUMERO) para un anio y mes especifico
     public List<Consumo> buscarPorTarjetaYPeriodo(String numeroTarjeta, int anio, int mes) {
         String jpql = "SELECT c FROM Consumo c WHERE c.tarjeta.numero = :numero " +
