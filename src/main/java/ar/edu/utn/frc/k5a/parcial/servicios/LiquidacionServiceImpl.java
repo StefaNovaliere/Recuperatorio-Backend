@@ -22,18 +22,18 @@ import java.util.stream.Collectors;
 public class LiquidacionServiceImpl implements LiquidacionService {
 
     // CONSTANTES DE LAS REGLAS (faciles de modificar si la consigna cambia un porcentaje)
-    private static final double IVA_ARS = 0.18;
-    private static final double ADICION_OTROS = 0.15;
-    private static final double IMPUESTO_EXTRANJERA = 0.10;
-    private static final double PORC_DESC_COMBUSTIBLE = 0.12;
-    private static final double TOPE_DESC_COMBUSTIBLE = 1200.0;
-    private static final double PORC_DESC_SUPERMERCADO = 0.25;
-    private static final double TOPE_DESC_SUPERMERCADO = 5000.0;
-    private static final double PORC_DESC_RESTAURANTE = 0.30;
+    private static final double IVA_ARS = 0.21;
+    private static final double ADICION_OTROS = 0.12;
+    private static final double IMPUESTO_EXTRANJERA = 0.075;
+    private static final double PORC_DESC_COMBUSTIBLE = 0.15;
+    private static final double TOPE_DESC_COMBUSTIBLE = 750.0;
+    private static final double PORC_DESC_SUPERMERCADO = 0.20;
+    private static final double TOPE_DESC_SUPERMERCADO = 3000.0;
+    private static final double PORC_DESC_RESTAURANTE = 0.25;
     private static final double PORC_DESC_INDUMENTARIA = 0;
     private static final double TOPE_DESC_INDUMENTARIA = 500.0;
-    private static final int DIA_MIN_REST = 1;
-    private static final int DIA_MAX_REST = 10;
+    private static final int DIA_MIN_REST = 10;
+    private static final int DIA_MAX_REST = 15;
 
     private final CotizacionRepository cotizacionRepository;
     private final ConsumoRepository consumoRepository;
@@ -83,7 +83,7 @@ public class LiquidacionServiceImpl implements LiquidacionService {
         l.setTotalImpuestos(total.getImpuestos());
         l.setTotalDescuentos(total.getDescuentos());
         //Calculo el neto final
-        l.setTotalAPagar(total.getConsumos() + total.getImpuestos() - total.getDescuentos());
+        l.setTotalAPagar(total.getTotal());
         //Persistir y entregar
         liquidacionRepository.guardar(l);
         return map(l);
@@ -157,13 +157,15 @@ public class LiquidacionServiceImpl implements LiquidacionService {
                     break;
                 }
                 case "RESTAURANTES": {
-                    descuento = consumo * PORC_DESC_RESTAURANTE;
+                    if (c.getDia()>=DIA_MIN_REST && c.getDia()<=DIA_MAX_REST){
+                        descuento = consumo * PORC_DESC_RESTAURANTE;
+                    }
                     break;
                 }
-                case "INDUMENTARIA": {
-                    descuento = Math.min(consumo *  PORC_DESC_INDUMENTARIA, TOPE_DESC_INDUMENTARIA);
-                    break;
-                }
+                //case "INDUMENTARIA": {
+                    //descuento = Math.min(consumo *  PORC_DESC_INDUMENTARIA, TOPE_DESC_INDUMENTARIA);
+                    //break;
+                //}
                 case "OTROS": {
                     impuesto += consumo * ADICION_OTROS;
                     break;
